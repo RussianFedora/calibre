@@ -1,6 +1,6 @@
 Name:           calibre
 Version:        0.6.42
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        E-book converter and library management
 Group:          Applications/Multimedia
 License:        GPLv3
@@ -27,6 +27,8 @@ BuildRequires:  ImageMagick-devel
 BuildRequires:  python-setuptools-devel
 BuildRequires:  qt-devel 
 BuildRequires:  PyQt4-devel
+BuildRequires:  qtwebkit-devel 
+BuildRequires:  PyQt4-webkit-devel
 BuildRequires:  poppler-qt4-devel >= 0.12
 BuildRequires:  podofo-devel
 BuildRequires:  desktop-file-utils
@@ -38,6 +40,7 @@ BuildRequires:  xdg-utils
 BuildRequires:  python-BeautifulSoup
 
 Requires:       PyQt4
+Requires:       PyQt4-webkit
 Requires:       pyPdf
 Requires:       python-cherrypy
 Requires:       python-cssutils
@@ -243,6 +246,9 @@ fi
 %{_mandir}/man1/*
 
 %changelog
+* Mon Mar 12 2012 Konstantin Kozlov <mackoel@gmail.com> - 0.6.42-2
+- Added qtwebkit and PyQt4-webkit to Requires and BuildRequires (-devel versions)
+
 * Fri Feb 26 2010 Ionuț C. Arțăriși <mapleoin@fedoraproject.org> - 0.6.42-1
 - new upstream release 0.6.42
 - remove shebang from default_tweaks.py
